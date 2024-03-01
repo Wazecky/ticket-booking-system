@@ -1,0 +1,31 @@
+/* style.css */
+body {
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+
+.navbar {
+    background-color: #009999;
+    color: #fff;
+    padding: 25px; /* Add some horizontal padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+}
+
+.system-name {
+    font-weight: bold;
+}
+
+/* Change link color to white */
+.navbar-right a {
+    color: #fff;
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust this value as desired */
+    margin-right: 10px;
+}
+
+/* Hover effect for links */
+.navbar-right a:hover {
+    text-decoration: underline;
+}

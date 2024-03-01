@@ -65,10 +65,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Event</title>
+    <link rel="stylesheet" href="../Style/style4.css">
+    <style>
+        /* New CSS styles */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        /* Styles for the "GO BACK" button */
+        .goback-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .goback-button:hover {
+            background-color: #da190b;
+        }
+    </style>
+    <title>EDIT EVENT</title>
 </head>
 <body>
-    <h2>Edit Event</h2>
+    <h1>EDIT EVENT</h1>
     <form action="#" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<?php echo $event['name']; ?>" required><br><br>
@@ -80,7 +103,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="vip_price" name="vip_price" value="<?php echo $event['ticket_price_vip']; ?>" required><br><br>
         <label for="max_attendees">Max Attendees:</label>
         <input type="number" id="max_attendees" name="max_attendees" value="<?php echo $event['max_attendees']; ?>" required><br><br>
-        <button type="submit">Update Event</button>
+        
+            <!-- Container for the buttons -->
+        <div class="button-container">
+            <!-- Add Event button -->
+            <button type="submit">Update Event</button>
+            
+            <!-- GO BACK button -->
+            <button class="goback-button" onclick="goBack()">GO BACK</button>
+        </div>
+
+        <!-- JavaScript function for the GO BACK button -->
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </form>
 </body>
 </html>

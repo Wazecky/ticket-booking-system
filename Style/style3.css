@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: silver;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #556b2f;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.btn {
+    padding: 8px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #c0d9c0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #009999;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+.edit-btn {
+    background-color: #009999;
+}
+
+.btn-add {
+    background-color: #009999;
+}
+
+.edit-btn:hover {
+    background-color: #218838;
+}
+
+.remove-btn {
+    background-color: #dc3545;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}
+
+.btn-book {
+    background-color: #007bff;
+}
+
+.btn-book:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-top: 10px;
+}

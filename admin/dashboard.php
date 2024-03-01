@@ -48,7 +48,8 @@ if(isset($_GET['update']) && $_GET['update'] === 'success' && isset($_GET['event
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>ADMIN PANEL</title>
+    <link rel="stylesheet" href="../Style/style3.css">
     <script>
         function confirmRemoveEvent(eventId) {
             if (confirm('Are you sure you want to remove this event?')) {
@@ -58,32 +59,44 @@ if(isset($_GET['update']) && $_GET['update'] === 'success' && isset($_GET['event
     </script>
 </head>
 <body>
-    <h2>Admin Dashboard</h2>
-    <a href="add_event.php">Add Event</a><br><br>
+    <div class="container">
+        <h1>ADMIN PANEL</h1>
+        <div class="button-group">
+            <button onclick="window.location.href='add_event.php'" class="btn btn-add">Add Event</button>
+            <a href="logout.php" class="btn logout-btn">Logout</a>
+        </div>
 
-    <!-- Display existing events and options to manage them -->
-    <?php
-    if (!empty($update_message)) {
-        echo "<p>$update_message</p>";
-    }
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<div>";
-            echo "<h3>" . $row['name'] . "</h3>";
-            echo "<p>Description: " . $row['description'] . "</p>";
-            echo "<p>Ticket Price (Regular): $" . $row['ticket_price_regular'] . "</p>";
-            echo "<p>Ticket Price (VIP): $" . $row['ticket_price_vip'] . "</p>";
-            echo "<p>Max Attendees: " . $row['max_attendees'] . "</p>";
-            echo "<a href='edit_event.php?id=" . $row['id'] . "'><button>Edit</button></a>";
-            echo "<button onclick=\"confirmRemoveEvent(" . $row['id'] . ")\">Remove</button>";
-            echo "</div><br>";
-        }
-    } else {
-        echo "No events found";
-    }
-    ?>
-    <?php echo $add_message; ?>
-    <br><br>
-    <a href="logout.php">Logout</a>
+        <table>
+            <tr>
+                <th>Event Name</th>
+                <th>Description</th>
+                <th>Ticket Price (Regular)</th>
+                <th>Ticket Price (VIP)</th>
+                <th>Max Attendees</th>
+                <th>Action</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $row['name'] . "</td>";
+                    echo "<td>" . $row['description'] . "</td>";
+                    echo "<td>$" . $row['ticket_price_regular'] . "</td>";
+                    echo "<td>$" . $row['ticket_price_vip'] . "</td>";
+                    echo "<td>" . $row['max_attendees'] . "</td>";
+                    echo "<td>
+                            <a href='edit_event.php?id=" . $row['id'] . "' class='btn edit-btn'>Edit</a>
+                            <button onclick=\"confirmRemoveEvent(" . $row['id'] . ")\" class='btn remove-btn'>Remove</button>
+                          </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='6'>No events found</td></tr>";
+            }
+            ?>
+        </table>
+
+        <?php echo $add_message; ?>
+    </div>
 </body>
 </html>
