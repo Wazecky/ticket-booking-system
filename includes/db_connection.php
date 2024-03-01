@@ -1,12 +1,12 @@
 <?php
-// Heroku database configuration
-$host = getenv('DB_HOST');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$database = getenv('DB_DATABASE');
+// Database configuration
+$servername = "j1r4n2ztuwm0bhh5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+$username = "d30xlnm0y02a823r";
+$password = "qha1s1wzfemt6cyg"; 
+$database = "cs27gnq2fixwa61l";
 
 // Create connection
-$conn = new mysqli($host, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
